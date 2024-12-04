@@ -50,11 +50,12 @@ const List = ({token})=>{
             <div className='flex flex-col gap-2'>
                 {/* --------list table title----- */}
 
-                <div className='hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center py-1 px-2 border bg-gray-100 text-sm'>
+                <div className='hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr_1fr] items-center py-1 px-2 border bg-gray-100 text-sm'>
                     <b>Image</b> 
                     <b>Name</b>
                     <b>Category</b>
-                    <b>Price</b>
+                    <b>Full Price</b>
+                    <b>Half Price</b>
                     <b className='text-center'>Action</b>
                 </div>
 
@@ -62,11 +63,12 @@ const List = ({token})=>{
 
                 {
                     list.map((item,index)=>(
-                        <div className='grid grid-cols-[1fr_3fr_1fr] md:grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center gap-2 py-1 px-2 border text-sm' key={index}>
+                        <div className='grid grid-cols-[1fr_3fr_1fr] md:grid-cols-[1fr_3fr_1fr_1fr_1fr_1fr] items-center gap-2 py-1 px-2 border text-sm' key={index}>
                             <img className='w-12' src={item.image[0]} alt=""></img>
                             <p>{item.name}</p>
                             <p>{item.category}</p>
-                            <p>{currency}{item.price}</p>
+                            <p>{currency}{item.fullprice}</p>
+                            <p>{currency}{item.halfprice}</p>
                             <p className='block sm:hidden'></p>
                             <p onClick={()=>removeProduct(item._id)} className='ml-4 md:text-center cursor-pointer text-lg text-red-600'>X</p>
                         </div>

@@ -61,6 +61,7 @@ const Add = ({ token }) => {
                 setImage4(false)
                 setFullPrice("")
                 setHalfPrice("")
+                setBestseller(false)
             }
             else {
                 toast.error(response.data.message)
