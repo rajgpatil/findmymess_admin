@@ -21,6 +21,7 @@ const List = ({token})=>{
         catch(err){
             console.log(err)
             toast.error(err.message)
+            localStorage.removeItem('token')
         }
     }
     useEffect(()=>{

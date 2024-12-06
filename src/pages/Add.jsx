@@ -70,6 +70,7 @@ const Add = ({ token }) => {
         catch (err) {
             console.log(err)
             toast.error(err.message)
+            localStorage.removeItem('token')
         }
 
 
